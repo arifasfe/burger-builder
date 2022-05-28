@@ -3,6 +3,7 @@ import Burger from './Burger/Burger';
 import Controls from './Controls/Controls'
 import { Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap'
 import Summary from './Summary/Summary';
+import { Link } from 'react-router-dom';
 const INGREDIENT_PRICES = {
     salad: 28,
     cheese: 40,
@@ -58,6 +59,7 @@ class BurgerBuilder extends Component {
     }
 
 
+
     render() {
         return (
             <div>
@@ -77,7 +79,7 @@ class BurgerBuilder extends Component {
                         <Summary ingredients={this.state.ingredients} />
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="success" onClick={this.toggleModal}>Continue to Checkout</Button>
+                        <Link to={"/checkout"}><Button color="success" onClick={this.handleCheckout}>Continue to Checkout</Button></Link>
                         <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
                     </ModalFooter>
 
